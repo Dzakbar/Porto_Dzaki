@@ -12,13 +12,7 @@ const projects = [
         color: '#FF6B6B',
     },
    
-    {
-        title: 'Customer Segmentation Analysis',
-        role: 'Data Analyst',
-        description: 'Machine learning-based customer segmentation to optimize marketing strategies and increase retention.',
-        techStack: ['Python', 'Scikit-learn', 'Power BI', 'Excel'],
-        color: '#43E97B',
-    },
+   
     {
         title: 'AR Board Games',
         role: 'Game Product Designer',
