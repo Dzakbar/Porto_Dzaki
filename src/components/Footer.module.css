@@ -1,0 +1,126 @@
+.footer {
+    background: var(--color-primary-darker);
+    border-top: 1px solid rgba(196, 168, 79, 0.1);
+    padding: 60px 0 30px;
+}
+
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+.top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 40px;
+}
+
+.brand {}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: 8px;
+}
+
+.logoAccent {
+    color: var(--color-accent);
+}
+
+.tagline {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+}
+
+.linksTitle {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-accent);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.link {
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    transition: var(--transition-fast);
+}
+
+.link:hover {
+    color: var(--color-accent-light);
+    transform: translateX(4px);
+}
+
+.social {}
+
+.socialIcons {
+    display: flex;
+    gap: 12px;
+}
+
+.socialIcon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid rgba(196, 168, 79, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-accent);
+    transition: var(--transition-normal);
+}
+
+.socialIcon:hover {
+    background: rgba(196, 168, 79, 0.1);
+    border-color: var(--color-accent);
+    transform: translateY(-3px);
+}
+
+.divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(196, 168, 79, 0.2), transparent);
+    margin-bottom: 24px;
+}
+
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.madeWith {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+}
+
+.heart {
+    color: #e74c3c;
+}
+
+@media (max-width: 768px) {
+    .top {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+
+    .bottom {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}

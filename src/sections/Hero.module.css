@@ -1,0 +1,306 @@
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 80px;
+}
+
+/* Marquee */
+.marqueeWrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.marqueeText {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    font-size: 10vw;
+    font-weight: 800;
+    color: rgba(26, 35, 85, 0.12);
+    animation: marqueeScroll 30s linear infinite;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+@keyframes marqueeScroll {
+    0% {
+        transform: translateY(-50%) translateX(0%);
+    }
+
+    100% {
+        transform: translateY(-50%) translateX(-50%);
+    }
+}
+
+/* Glows */
+.glowGold {
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(196, 168, 79, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.glowNavy {
+    position: absolute;
+    bottom: -150px;
+    left: -100px;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(26, 35, 85, 0.25) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    position: relative;
+    z-index: 1;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+/* Text Side */
+.textSide {
+    flex: 1;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 20px;
+    background: rgba(196, 168, 79, 0.1);
+    border: 1px solid rgba(196, 168, 79, 0.3);
+    border-radius: var(--radius-full);
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-accent-light);
+    margin-bottom: 24px;
+    animation: badgePulse 3s ease-in-out infinite;
+}
+
+.badgeDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    animation: dotPulse 2s ease-in-out infinite;
+}
+
+@keyframes dotPulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes badgePulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(196, 168, 79, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 0 6px rgba(196, 168, 79, 0.05);
+    }
+}
+
+.title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.nameAccent {
+    background: var(--gradient-gold);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Role Bar — LinkedIn Style */
+.roleBar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+    padding: 12px 0;
+    border-top: 1px solid rgba(196, 168, 79, 0.15);
+    border-bottom: 1px solid rgba(196, 168, 79, 0.15);
+}
+
+.role {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+}
+
+.roleDivider {
+    color: var(--color-accent);
+    font-weight: 300;
+    font-size: 1.3rem;
+}
+
+.description {
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 32px;
+    max-width: 520px;
+}
+
+/* Actions */
+.actions {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.btnPrimary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    background: var(--gradient-gold);
+    color: var(--color-primary-dark);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-full);
+    transition: var(--transition-normal);
+}
+
+.btnPrimary:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 30px rgba(196, 168, 79, 0.3);
+}
+
+.btnOutline {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 14px 30px;
+    background: transparent;
+    color: var(--color-accent);
+    font-weight: 600;
+    font-size: 0.95rem;
+    border-radius: var(--radius-full);
+    border: 2px solid var(--color-accent);
+    transition: var(--transition-normal);
+}
+
+.btnOutline:hover {
+    background: rgba(196, 168, 79, 0.1);
+    transform: translateY(-3px);
+}
+
+/* Photo Side */
+.photoSide {
+    flex-shrink: 0;
+}
+
+.photoWrapper {
+    width: 350px;
+    height: 420px;
+    border-radius: var(--radius-xl);
+    overflow: hidden;
+    border: 2px solid rgba(196, 168, 79, 0.2);
+    background: var(--color-surface);
+    position: relative;
+}
+
+.photoWrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photoPlaceholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: var(--color-text-muted);
+    font-size: 0.9rem;
+    background: linear-gradient(135deg, var(--color-surface) 0%, var(--color-primary-dark) 100%);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .content {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .roleBar {
+        justify-content: center;
+    }
+
+    .description {
+        max-width: 100%;
+    }
+
+    .actions {
+        justify-content: center;
+    }
+
+    .photoWrapper {
+        width: 250px;
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title {
+        font-size: 2rem;
+    }
+
+    .actions {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .btnPrimary,
+    .btnOutline {
+        justify-content: center;
+    }
+}
