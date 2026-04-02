@@ -194,8 +194,6 @@ input, textarea {
   border-radius: var(--radius-full);
   transition: var(--transition-normal);
   border: none;
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards 0.3s;
 }
 
 .btn-primary:hover {
@@ -215,8 +213,6 @@ input, textarea {
   border-radius: var(--radius-full);
   border: 2px solid var(--color-accent);
   transition: var(--transition-normal);
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards 0.35s;
 }
 
 .btn-outline:hover {
@@ -233,15 +229,8 @@ input, textarea {
   border-radius: var(--radius-lg);
   padding: 24px;
   transition: var(--transition-normal);
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 1;
 }
-
-.card:nth-child(1) { animation-delay: 0.2s; }
-.card:nth-child(2) { animation-delay: 0.3s; }
-.card:nth-child(3) { animation-delay: 0.4s; }
-.card:nth-child(4) { animation-delay: 0.5s; }
-.card:nth-child(n+5) { animation-delay: 0.6s; }
 
 .card:hover {
   border-color: rgba(196, 168, 79, 0.3);
@@ -369,36 +358,30 @@ input, textarea {
   }
 }
 
-/* Apply animations to main sections */
+/* Apply animations to main sections - scroll only */
 section {
-  opacity: 0;
-  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 1;
 }
 
-section:nth-of-type(1) {
+section.animate-in:nth-of-type(2) {
   animation-delay: 0.1s;
 }
 
-section:nth-of-type(2) {
+section.animate-in:nth-of-type(3) {
   animation-delay: 0.2s;
 }
 
-section:nth-of-type(3) {
+section.animate-in:nth-of-type(4) {
   animation-delay: 0.3s;
 }
 
-section:nth-of-type(4) {
+section.animate-in:nth-of-type(5) {
   animation-delay: 0.4s;
-}
-
-section:nth-of-type(5) {
-  animation-delay: 0.5s;
 }
 
 /* Header animation */
 header {
-  opacity: 0;
-  animation: slideInDown 0.6s ease-out forwards;
+  opacity: 1;
 }
 
 @keyframes slideInDown {

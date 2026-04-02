@@ -7,9 +7,10 @@ export default function LoadingScreen() {
     const [isVisible, setIsVisible] = useState(true);
 
     useEffect(() => {
+        // Show loading screen for 1.2 seconds only
         const timer = setTimeout(() => {
             setIsVisible(false);
-        }, 2500);
+        }, 1200);
 
         return () => clearTimeout(timer);
     }, []);
