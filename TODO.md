@@ -1,6 +1,1 @@
-# iQuarium Addition to Projects Section
-
-## Steps:
-# Task Complete: iQuarium added to Projects section
-
-All steps done. You can delete this file if desired.
+# Instagram RSS Feed ✅ Progress\n\n- [DONE] Deps\n- [DONE] InstagramFeed.jsx (demo natgeo)\n- [DONE] Styles in Projects.module.css (IG grid ready, lint fixed)\n- [PENDING] Add to Projects.jsx as 5th project\n- [PENDING] Get your IG username to customize\n\nDemo ready! Run `npm run dev` to test @natgeo feed. Kasih username IG kamu untuk finalisasi.\n

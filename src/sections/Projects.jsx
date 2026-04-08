@@ -57,7 +57,7 @@ export default function Projects() {
     return (
         <section id="projects" className={styles.projects}>
             <div className={styles.container}>
-                <h2 className={styles.sectionTitle}>My Amazing Works</h2>
+                <h2 className={styles.sectionTitle}>What Ived Worked On</h2>
                 <p className={styles.sectionSubtitle}>Here are some of my recent projects</p>
 
                 <div className={styles.grid}>

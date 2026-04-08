@@ -415,6 +415,7 @@ header {
 @media (max-width: 480px) {
   :root {
     --container-padding: 0 16px;
+    --section-padding: 40px 0;
   }
 
   .section-title {

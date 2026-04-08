@@ -24,7 +24,8 @@
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
+    gap: 2rem;
+    align-items: start;
 }
 
 .card {
@@ -255,19 +256,61 @@
     gap: 10px;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1200px) {
     .grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+    }
+}
+
+@media (max-width: 768px) {
     .grid {
         grid-template-columns: 1fr;
+        gap: 1rem;
     }
 
     .sectionTitle {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    .sectionSubtitle {
+        font-size: 0.95rem;
+    }
+
+    .cardThumb {
+        aspect-ratio: unset;
+        height: clamp(160px, 40vw, 200px);
+    }
+
+    .cardBody {
+        padding: 1rem;
+    }
+
+    .cardTitle {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    .cardDesc {
+        font-size: 0.8rem;
+        -webkit-line-clamp: 2;
+    }
+
+    .techPill {
+        font-size: 0.7rem;
+        padding: 0.25rem 0.75rem;
+    }
+
+    .showMoreBtn {
+        padding: 10px 24px;
+        font-size: 0.9rem;
     }
 
     .modalContent {
@@ -285,5 +328,39 @@
 
     .modalImage {
         height: 200px;
+    }
+}
+
+/* Instagram Feed */
+.igGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 0.75rem;
+    padding: 1.5rem;
+}
+
+.igImage {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: var(--radius-md);
+    transition: var(--transition-normal);
+    cursor: pointer;
+    border: 1px solid rgba(196, 168, 79, 0.1);
+}
+
+.igImage:hover {
+    transform: scale(1.03);
+    box-shadow: var(--shadow-md);
+    border-color: var(--color-accent);
+}
+
+@media (max-width: 768px) {
+    .igGrid {
+        grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+        gap: 0.5rem;
+    }
+    .igImage {
+        height: 80px;
     }
 }
