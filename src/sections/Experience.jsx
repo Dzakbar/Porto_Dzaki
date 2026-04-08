@@ -32,7 +32,7 @@ const experiences = [
             'Created memorable and engaging environment for over 50+ orphans',
             'Balanced creative excellence with practical resource management'
         ],
-        photos: ['/gy3.1.jpg', '/gy3.2.jpg', '/gy3.4.jpg', '/gy3.5.jpg'],
+        photos: ['/gy3.1.JPG', '/gy3.2.JPG', '/gy3.4.JPG', '/gy3.5.JPG'],
         tags: ['Leadership', 'Event Planning', 'Decoration Design', 'Team Management', 'Budget Planning', 'Volunteering'],
     },
     {
