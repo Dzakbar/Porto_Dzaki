@@ -35,48 +35,8 @@ const experiences = [
         photos: ['/gy3.1.JPG', '/gy3.2.JPG', '/gy3.4.JPG', '/gy3.5.JPG'],
         tags: ['Leadership', 'Event Planning', 'Decoration Design', 'Team Management', 'Budget Planning', 'Volunteering'],
     },
-    {
-        title: 'Web Development Bootcamp',
-        period: 'Jun 2024 - Aug 2024',
-        location: 'Online',
-        description: 'Full-stack web development bootcamp focusing on React, Next.js, and modern web technologies. Built multiple projects from scratch.',
-        highlights: [
-            'Built 5+ full-stack projects from concept to deployment',
-            'Mastered React hooks and Next.js server components',
-            'Implemented RESTful APIs and database optimization',
-            'Collaborated in agile team environment'
-        ],
-        photos: [null, null],
-        tags: ['React', 'Next.js', 'Node.js'],
-    },
-    {
-        title: 'Campus Tech Organization',
-        period: 'Sep 2023 - Present',
-        location: 'Campus',
-        description: 'Active member and contributor in campus technology organization. Leading technical workshops and mentoring junior members.',
-        highlights: [
-            'Organized and led 10+ technical workshops',
-            'Mentored 15+ junior members in web development',
-            'Managed community events and hackathons',
-            'Built collaborative learning environment'
-        ],
-        photos: [null, null, null, null],
-        tags: ['Leadership', 'Teaching', 'Tech'],
-    },
-    {
-        title: 'Freelance Projects',
-        period: 'Mar 2024 - Present',
-        location: 'Remote',
-        description: 'Taking freelance projects for data analysis and web development. Working with various clients on dashboards, websites, and data solutions.',
-        highlights: [
-            'Delivered 8+ successful freelance projects',
-            'Created interactive dashboards for data-driven decision making',
-            'Built responsive websites with excellent UX',
-            'Maintained 100% client satisfaction rate'
-        ],
-        photos: [null, null, null],
-        tags: ['Freelance', 'Dashboard', 'Web'],
-    },
+   
+    
 ];
 
 function PhotoGallery({ photos, title }) {
