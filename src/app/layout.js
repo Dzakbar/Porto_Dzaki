@@ -5,6 +5,9 @@ import Providers from './providers';
 export const metadata = {
   title: 'Porto Dzaki - Portfolio',
   description: 'Fullstack Developer Portfolio',
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 const poppins = Poppins({
