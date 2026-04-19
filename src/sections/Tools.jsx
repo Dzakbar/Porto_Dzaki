@@ -1,4 +1,4 @@
-import { SiNextdotjs, SiReact, SiJavascript, SiPython, SiTailwindcss, SiBootstrap, SiNumpy, SiUnity, SiPostgresql, SiFigma, SiGithub } from 'react-icons/si';
+import { SiNextdotjs, SiReact, SiJavascript, SiPython, SiTailwindcss, SiBootstrap, SiNumpy, SiPandas, SiUnity, SiPostgresql, SiFigma, SiGithub } from 'react-icons/si';
 import { FaChartBar } from 'react-icons/fa';
 import styles from './Tools.module.css';
 
@@ -10,6 +10,7 @@ const tools = [
     { name: 'Tailwind', category: 'CSS Framework', icon: SiTailwindcss, color: '#06B6D4' },
     { name: 'Bootstrap', category: 'CSS Framework', icon: SiBootstrap, color: '#7952B3' },
     { name: 'NumPy', category: 'Python Library', icon: SiNumpy, color: '#013243' },
+    { name: 'Pandas', category: 'Data Analysis', icon: SiPandas, color: '#150458' },
     { name: 'Matplotlib', category: 'Data Visualization', icon: FaChartBar, color: '#006A4E' },
     { name: 'Unity', category: 'Game Engine', icon: SiUnity, color: '#FFFFFF' },
     { name: 'SQL', category: 'Database', icon: SiPostgresql, color: '#336791' },
