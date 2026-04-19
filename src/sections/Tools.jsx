@@ -1,16 +1,21 @@
+import { SiNextdotjs, SiReact, SiJavascript, SiPython, SiTailwindcss, SiBootstrap, SiNumpy, SiPandas, SiUnity, SiPostgresql, SiFigma, SiGithub } from 'react-icons/si';
+import { FaChartBar } from 'react-icons/fa';
 import styles from './Tools.module.css';
 
 const tools = [
-    { name: 'Next JS', category: 'Framework', devicon: 'devicon-nextjs-original', color: '#FFFFFF' },
-    { name: 'React JS', category: 'Library', devicon: 'devicon-react-original', color: '#61DAFB' },
-    { name: 'JavaScript', category: 'Language', devicon: 'devicon-javascript-plain', color: '#F7DF1E' },
-    { name: 'Python', category: 'Language', devicon: 'devicon-python-plain', color: '#3776AB' },
-    { name: 'Tailwind', category: 'CSS Framework', devicon: 'devicon-tailwindcss-plain', color: '#06B6D4' },
-    { name: 'Bootstrap', category: 'CSS Framework', devicon: 'devicon-bootstrap-plain', color: '#7952B3' },
-    { name: 'SQL', category: 'Database', devicon: 'devicon-postgresql-plain', color: '#336791' },
-    { name: 'Excel', category: 'Data Tool', devicon: 'devicon-microsoft-excel-plain', color: '#207044' },
-    { name: 'Figma', category: 'Design Tool', devicon: 'devicon-figma-plain', color: '#F24E1E' },
-    { name: 'GitHub', category: 'Version Control', devicon: 'devicon-github-original', color: '#181717' },
+    { name: 'Next JS', category: 'Framework', icon: SiNextdotjs, color: '#000000' },
+    { name: 'React JS', category: 'Library', icon: SiReact, color: '#61DAFB' },
+    { name: 'JavaScript', category: 'Language', icon: SiJavascript, color: '#F7DF1E' },
+    { name: 'Python', category: 'Language', icon: SiPython, color: '#3776AB' },
+    { name: 'Tailwind', category: 'CSS Framework', icon: SiTailwindcss, color: '#06B6D4' },
+    { name: 'Bootstrap', category: 'CSS Framework', icon: SiBootstrap, color: '#7952B3' },
+    { name: 'NumPy', category: 'Python Library', icon: SiNumpy, color: '#013243' },
+    { name: 'Pandas', category: 'Data Analysis', icon: SiPandas, color: '#150458' },
+    { name: 'Matplotlib', category: 'Data Visualization', icon: FaChartBar, color: '#006A4E' },
+    { name: 'Unity', category: 'Game Engine', icon: SiUnity, color: '#FFFFFF' },
+    { name: 'SQL', category: 'Database', icon: SiPostgresql, color: '#336791' },
+    { name: 'Figma', category: 'Design Tool', icon: SiFigma, color: '#F24E1E' },
+    { name: 'GitHub', category: 'Version Control', icon: SiGithub, color: '#181717' },
 ];
 
 export default function Tools() {
@@ -30,10 +35,11 @@ export default function Tools() {
                                     backgroundColor: `${tool.color}15`
                                 }}
                             >
-                                <i 
-                                    className={`${tool.devicon} ${styles.toolIcon}`}
+                                <tool.icon 
+                                    size={48}
                                     style={{ color: tool.color }}
-                                ></i>
+                                    className={styles.toolIcon}
+                                />
                             </div>
                             <div className={styles.toolInfo}>
                                 <h3 className={styles.toolName}>{tool.name}</h3>
