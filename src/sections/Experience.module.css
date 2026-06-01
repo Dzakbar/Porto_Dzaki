@@ -27,260 +27,119 @@
     color: var(--color-text-muted);
 }
 
-.scrollButtons {
-    display: flex;
-    gap: 8px;
+/* Photo Gallery */
+.galleryGrid {
+    max-width: var(--container-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-auto-rows: 220px;
+    gap: 16px;
 }
 
-.scrollBtn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: var(--color-surface);
-    border: 1px solid rgba(196, 168, 79, 0.2);
-    color: var(--color-accent);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-normal);
-}
-
-.scrollBtn:hover {
-    background: rgba(196, 168, 79, 0.15);
-    border-color: var(--color-accent);
-    transform: scale(1.05);
-}
-
-/* Carousel */
-.carousel {
-    display: flex;
-    gap: 24px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    padding: 0 max(24px, calc((100vw - var(--container-width)) / 2 + 24px));
-    padding-bottom: 20px;
-    cursor: grab;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
-
-.carousel::-webkit-scrollbar {
-    display: none;
-}
-
-.carousel:active {
-    cursor: grabbing;
-}
-
-/* Card */
-.card {
-    flex-shrink: 0;
-    width: 350px;
-    background: var(--color-surface);
-    border: 1px solid rgba(196, 168, 79, 0.1);
-    border-radius: var(--radius-lg);
+.galleryTile {
+    position: relative;
+    min-width: 0;
+    padding: 0;
     overflow: hidden;
-    scroll-snap-align: start;
+    text-align: left;
+    color: var(--color-text);
+    background: var(--color-surface);
+    border: 1px solid rgba(196, 168, 79, 0.12);
+    border-radius: var(--radius-lg);
     transition: var(--transition-normal);
 }
 
-.card:hover {
-    border-color: rgba(196, 168, 79, 0.3);
+.galleryTile:hover {
+    border-color: rgba(196, 168, 79, 0.36);
     box-shadow: var(--shadow-card-hover);
     transform: translateY(-4px);
 }
 
-/* Photo Gallery */
-.gallery {
-    position: relative;
-    height: 220px;
-    background: linear-gradient(135deg, var(--color-primary-dark), var(--color-surface-light));
+.featureTile {
+    grid-column: span 2;
+    grid-row: span 2;
+}
+
+.galleryImage {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.galleryTile:hover .galleryImage {
+    transform: scale(1.05);
+    filter: saturate(1.08);
+}
+
+.photoIndex {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    padding: 4px 10px;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 600;
+    background: rgba(10, 13, 26, 0.68);
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: var(--radius-full);
+    backdrop-filter: blur(8px);
+}
+
+.tileOverlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+    pointer-events: none;
+}
+
+.tilePeriod {
+    color: var(--color-accent-light);
+    font-size: 0.78rem;
+    font-weight: 700;
+}
+
+.tileTitle {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.25;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
-.galleryView {
-    width: 100%;
-    height: 100%;
+.featureTile .tileTitle {
+    font-size: 1.35rem;
 }
 
-.galleryView img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.tileLocation {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.78rem;
+    line-height: 1.35;
 }
 
-.photoPlaceholder {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    color: var(--color-text-muted);
-    font-size: 0.8rem;
-}
-
-.galleryBtn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: rgba(10, 13, 26, 0.7);
-    backdrop-filter: blur(8px);
-    border: 1px solid rgba(196, 168, 79, 0.2);
-    color: var(--color-text);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: var(--transition-fast);
-    z-index: 2;
-}
-
-.galleryBtn:hover {
-    background: rgba(196, 168, 79, 0.3);
-    border-color: var(--color-accent);
-}
-
-.galleryPrev {
-    left: 8px;
-}
-
-.galleryNext {
-    right: 8px;
-}
-
-.dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 6px;
-    z-index: 2;
-}
-
-.dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.3);
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    transition: var(--transition-fast);
-}
-
-.dotActive {
-    background: var(--color-accent);
-    width: 18px;
-    border-radius: 3px;
-}
-
-.photoCount {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 3px 10px;
-    background: rgba(10, 13, 26, 0.7);
-    backdrop-filter: blur(8px);
+.tileAction {
+    margin-top: 8px;
+    padding: 6px 12px;
+    color: var(--color-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(196, 168, 79, 0.35);
     border-radius: var(--radius-full);
-    font-size: 0.7rem;
-    color: var(--color-text-secondary);
-    z-index: 2;
-}
-
-/* Card Body */
-.cardBody {
-    padding: 20px;
-}
-
-.cardTitle {
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--color-text);
-    margin-bottom: 4px;
-}
-
-.cardPeriod {
-    font-size: 0.8rem;
-    color: var(--color-accent);
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-.cardDesc {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
-    line-height: 1.5;
-    margin-bottom: 16px;
-}
-
-.cardLocation {
-    font-size: 0.8rem;
-    color: var(--color-accent);
-    margin-bottom: 12px;
-    font-weight: 500;
-}
-
-.highlights {
-    list-style: none;
-    padding: 0;
-    margin: 12px 0 16px 0;
-}
-
-.highlightItem {
-    font-size: 0.8rem;
-    color: var(--color-text-muted);
-    padding-left: 16px;
-    margin-bottom: 6px;
-    position: relative;
-    line-height: 1.4;
-}
-
-.highlightItem:before {
-    content: '✓';
-    position: absolute;
-    left: 0;
-    color: var(--color-accent);
-    font-weight: 600;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-}
-
-.tag {
-    padding: 3px 10px;
-    border-radius: var(--radius-full);
-    border: 1px solid rgba(196, 168, 79, 0.25);
-    color: var(--color-accent-light);
-    font-size: 0.72rem;
-    font-weight: 500;
-}
-
-.viewDetailsBtn {
-    width: 100%;
-    padding: 10px;
-    margin-top: 12px;
-    background: linear-gradient(135deg, rgba(196, 168, 79, 0.15), rgba(196, 168, 79, 0.05));
-    border: 1px solid rgba(196, 168, 79, 0.3);
-    border-radius: var(--radius-md);
-    color: var(--color-accent);
-    font-size: 0.85rem;
-    font-weight: 500;
-    cursor: pointer;
-    transition: var(--transition-normal);
-}
-
-.viewDetailsBtn:hover {
-    background: linear-gradient(135deg, rgba(196, 168, 79, 0.25), rgba(196, 168, 79, 0.1));
-    border-color: var(--color-accent);
-    transform: translateX(2px);
 }
 
 /* Modal Styles */
@@ -506,23 +365,43 @@
     border-color: var(--color-accent);
 }
 
+@media (max-width: 1024px) {
+    .galleryGrid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: 210px;
+    }
+}
+
 @media (max-width: 768px) {
     .header {
         flex-direction: column;
         align-items: flex-start;
         gap: 16px;
+        margin-bottom: 1.5rem;
     }
 
     .sectionTitle {
         font-size: 1.8rem;
     }
 
-    .card {
-        width: 300px;
+    .galleryGrid {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 230px;
+        gap: 12px;
     }
 
-    .gallery {
-        height: 180px;
+    .featureTile {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    .tileOverlay {
+        padding: 16px;
+    }
+
+    .featureTile .tileTitle,
+    .tileTitle {
+        font-size: 1rem;
     }
 
     .modal {

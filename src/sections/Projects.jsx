@@ -11,6 +11,13 @@ const projects = [
         techStack: ['Next.js', 'React', 'Laravel', 'REST API', 'Maps', 'Admin Dashboard'],
         color: '#FF6B6B',
     },
+    {
+        title: 'Wigra Production House Company Profile & CMS',
+        role: 'Frontend Developer',
+        description: 'Company profile and CMS platform for Wigra Production House. Built the React frontend views for the monolithic Laravel dashboard, then developed a React company profile frontend that fetches content through API microservices.',
+        techStack: ['React', 'Laravel', 'REST API', 'CMS', 'Microservices', 'Monolith'],
+        color: '#C4A84F',
+    },
    
    
     {
@@ -44,6 +51,8 @@ export default function Projects() {
     const getProjectImage = (project) => {
         if (project.title === "Company Profile & Logistics Monitoring System") {
             return "/mjp.png";
+        } else if (project.title === "Wigra Production House Company Profile & CMS") {
+            return "/wigra.png";
         } else if (project.title === "AR Board Games") {
             return "/ar.png";
         } else if (project.title === "Hafidz Catering Mobile App Design") {
@@ -57,7 +66,7 @@ export default function Projects() {
     return (
         <section id="projects" className={styles.projects}>
             <div className={styles.container}>
-                <h2 className={styles.sectionTitle}>What Ived Worked On</h2>
+                <h2 className={styles.sectionTitle}>Featured Projects</h2>
                 <p className={styles.sectionSubtitle}>Here are some of my recent projects</p>
 
                 <div className={styles.grid}>
